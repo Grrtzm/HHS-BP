@@ -1,7 +1,8 @@
 # Welkom bij HHS-BP
 
-De bestanden die je hier aantreft worden gebruikt bij: 
- **Haagse Hogeschool, HBO-ICT, Basisprogramma Embedded Systems** (TECH2 Embedded Sytems)
+De bestanden die je hier aantreft worden gebruikt bij:
+
+**Haagse Hogeschool, HBO-ICT, Basisprogramma Embedded Systems** (TECH2 Embedded Sytems)
 
 Binnen dit vak wordt gebruik gemaakt van een Microbit V2 in combinatie met de Arduino IDE.
 
