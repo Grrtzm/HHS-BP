@@ -50,9 +50,6 @@ LSM303AGR_ACC_Sensor Acc(&DEV_I2C);
 LSM303AGR_MAG_Sensor Mag(&DEV_I2C);
 
 void setup() {
-  // Led.
-  pinMode(13, OUTPUT);
-
   // Initialize serial for output.
   Serial.begin(9600);
   
@@ -68,12 +65,6 @@ void setup() {
 }
 
 void loop() {
-  // Led blinking.
-  digitalWrite(13, HIGH);
-  delay(250);
-  digitalWrite(13, LOW);
-  delay(250);
-
   // Read accelerometer LSM303AGR.
   int32_t accelerometer[3];
   Acc.GetAxes(accelerometer);
@@ -87,19 +78,16 @@ void loop() {
   Mag.GetAxes(magnetometer);
 
   // Output data.
-  Serial.print("| Acc[mg]: ");
+  Serial.print("A0:");
   Serial.print(accelerometer[0]);
-  Serial.print(" ");
+  Serial.print(", A1:");
   Serial.print(accelerometer[1]);
-  Serial.print(" ");
+  Serial.print(", A2:");
   Serial.print(accelerometer[2]);
-  Serial.print(" | Mag[mGauss]: ");
+  Serial.print(", M0:");
   Serial.print(magnetometer[0]);
-  Serial.print(" ");
+  Serial.print(", M1:");
   Serial.print(magnetometer[1]);
-  Serial.print(" ");
-  Serial.print(magnetometer[2]);
-  Serial.print(" | Temp[C]: ");
-  Serial.print(temperature, 2);
-  Serial.println(" |");
+  Serial.print(", M2:");
+  Serial.println(magnetometer[2]);
 }
