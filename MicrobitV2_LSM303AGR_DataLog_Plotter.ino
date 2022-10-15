@@ -78,6 +78,7 @@ void loop() {
   Mag.GetAxes(magnetometer);
 
   // Output data.
+  // Voor meer info over het weergeven van data zie https://dreamonward.com/2020/07/25/arduino-serial-plotter-labels/ 
   Serial.print("A0:");
   Serial.print(accelerometer[0]);
   Serial.print(", A1:");
