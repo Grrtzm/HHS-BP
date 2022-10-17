@@ -41,6 +41,6 @@ void loop() {
     }
   }
 
-  // Stap 4: Kopieer de regels die je zojuist gemaakt hebt naar het uiteindelijke Flappy Bird spel
+  // Stap 4: Kopieer de regels die je zojuist gemaakt hebt naar verplaatsMuur() in het uiteindelijke Flappy Bird spel
   delay(1000);
 }

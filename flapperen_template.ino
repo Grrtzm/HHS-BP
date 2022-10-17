@@ -15,11 +15,11 @@ void setup() {
 void loop() {
   // Onderstaande code zit in het spel in void controleerScore()
   if (flap == 1) {  // met het knipperen simuleren we het flapperen
-    // Stap 1. Vul de regels hieronder aan met een bitwise operation zodat de meest linker led wordt aangezet.
+    // Stap 5. Vul de regels hieronder aan met een bitwise operation zodat de meest linker led wordt aangezet.
     matrix[bird] = matrix[bird];  // vogel zit in de meest linker kolom
     flap = 0;
   } else {
-    // Stap 2. Vul de regels hieronder aan met een bitwise operation zodat de meest linker led wordt uitgezet.
+    // Stap 6. Vul de regels hieronder aan met een bitwise operation zodat de meest linker led wordt uitgezet.
     // Het is in beide gevallen dezelfde bitwise operation.
     matrix[vorigeBird] = matrix[vorigeBird];  // oude sporen uitwissen (de meest linker led uitzetten)
     matrix[bird] = matrix[bird];              // de meest linker led uitzetten
@@ -29,4 +29,5 @@ void loop() {
   display.show(matrix);
   vorigeBird = bird;
   delay(50); // knippersnelheid
+  // Stap 7: Kopieer de regels die je zojuist gemaakt hebt naar controleerScore() in het uiteindelijke Flappy Bird spel
 }
