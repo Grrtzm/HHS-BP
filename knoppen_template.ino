@@ -6,8 +6,8 @@
 #include <Adafruit_Microbit.h>
 Adafruit_Microbit_Matrix display;
 
-uint8_t bird = 2;  // plek waar de vogel zit. In het midden beginnen.
-uint8_t vorigeBird = 0;
+int bird = 2;  // plek waar de vogel zit. In het midden beginnen.
+int vorigeBird = 0;
 
 void bepaalPositieMetKnoppen(int&);  // forward declaration, zie https://en.wikipedia.org/wiki/Forward_declaration
 
@@ -28,7 +28,7 @@ void loop() {
   delay(20);
 }
 
-void bepaalPositieMetKnoppen(uint8_t& vogel) {
+void bepaalPositieMetKnoppen(int& vogel) {
   // Het resultaat van deze functie is dat de variabele vogel
   // door op de knoppen te drukken
   // een waarde krijgt in het bereik 1 .. 5 (er zijn 5 leds)
