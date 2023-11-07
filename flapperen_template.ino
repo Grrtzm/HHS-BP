@@ -6,7 +6,6 @@ Adafruit_Microbit_Matrix display;
 uint8_t matrix[5] = { 0, 0, 0b10000, 0, 0 };  // uint8_t betekent: een unsigned 8 bits integer
 bool flap = 1;                                // t.b.v. het knipperen van de vogel
 int bird = 2;                                 // positie van vogel vastgezet (handig voor deze opdracht)
-int vorigeBird = 0;
 
 void setup() {
   display.begin();  // matrix display aanzetten
@@ -21,13 +20,11 @@ void loop() {
   } else {
     // Stap 6. Vul de regels hieronder aan met een bitwise operation zodat de meest linker led wordt uitgezet.
     // Het is in beide gevallen dezelfde bitwise operation.
-    matrix[vorigeBird] = matrix[vorigeBird];  // oude sporen uitwissen (de meest linker led uitzetten)
     matrix[bird] = matrix[bird];              // de meest linker led uitzetten
     flap = 1;
   }
 
   display.show(matrix);
-  vorigeBird = bird;
   delay(50); // knippersnelheid
   // Stap 7: Kopieer de regels die je zojuist gemaakt hebt naar controleerScore() in het uiteindelijke Flappy Bird spel
 }
